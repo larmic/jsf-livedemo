@@ -16,17 +16,19 @@ public class TextRenderer extends Renderer {
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         final ResponseWriter writer = context.getResponseWriter();
 
-        writer.startElement("div", component);
+        final UIText text = (UIText) component;
+
+        writer.startElement("div", text);
         writer.writeAttribute("class", "text-input", "styleClass");
 
-        writer.startElement("label", component);
-        writer.writeText("Username", component, null);
+        writer.startElement("label", text);
+        writer.writeText(text.getLabel(), text, null);
         writer.endElement("label");
 
-        writer.startElement("br", component);
+        writer.startElement("br", text);
         writer.endElement("br");
 
-        writer.startElement("input", component);
+        writer.startElement("input", text);
         writer.endElement("input");
     }
 

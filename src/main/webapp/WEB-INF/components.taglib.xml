@@ -14,5 +14,9 @@
         <component>
             <component-type>de.larmic.jsf.livedemo.text</component-type>
         </component>
+        <attribute>
+            <name>label</name>
+            <required>true</required>
+        </attribute>
     </tag>
 </facelet-taglib>
