@@ -1,0 +1,24 @@
+.text-input label {
+    font-weight: 700;
+    font-size: .8em;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 2em;
+}
+
+.text-input input {
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: .9em;
+    color: #888;
+}
+
+.text-input input:focus {
+    outline: none;
+    border-color: #665851;
+    transition: 0.5s;
+    color: #665851;
+}

@@ -17,7 +17,7 @@ public class TextRenderer extends Renderer {
         final ResponseWriter writer = context.getResponseWriter();
 
         writer.startElement("div", component);
-        writer.writeAttribute("style", "text-input", "styleClass");
+        writer.writeAttribute("class", "text-input", "styleClass");
 
         writer.startElement("label", component);
         writer.writeText("Username", component, null);

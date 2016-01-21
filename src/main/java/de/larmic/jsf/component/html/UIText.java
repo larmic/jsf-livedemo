@@ -1,8 +1,13 @@
 package de.larmic.jsf.component.html;
 
+import javax.faces.application.ResourceDependencies;
+import javax.faces.application.ResourceDependency;
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 
+@ResourceDependencies(
+        @ResourceDependency(library = "component-css", name = "text.css", target = "head")
+)
 @FacesComponent(UIText.COMPONENT_TYPE)
 public class UIText extends UIComponentBase {
 
