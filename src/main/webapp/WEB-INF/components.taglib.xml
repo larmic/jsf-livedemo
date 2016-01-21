@@ -18,5 +18,9 @@
             <name>label</name>
             <required>true</required>
         </attribute>
+        <attribute>
+            <name>placeholder</name>
+            <required>false</required>
+        </attribute>
     </tag>
 </facelet-taglib>
