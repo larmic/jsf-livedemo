@@ -29,6 +29,9 @@ public class TextRenderer extends Renderer {
         writer.endElement("br");
 
         writer.startElement("input", text);
+        if (text.getPlaceholder() != null && !"".equals(text.getPlaceholder())) {
+            writer.writeAttribute("placeholder", text.getPlaceholder(), null);
+        }
         writer.endElement("input");
     }
 

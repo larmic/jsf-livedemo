@@ -17,6 +17,7 @@ public class UIText extends UIComponentBase {
     public static final String COMPONENT_FAMILY = "de.larmic.jsf.livedemo.family";
 
     protected static final String PROPERTY_LABEL = "label";
+    protected static final String PROPERTY_PLACEHOLDER = "placeholder";
 
     public UIText() {
         super();
@@ -34,6 +35,14 @@ public class UIText extends UIComponentBase {
 
     public void setLabel(final String title) {
         this.updateStateHelper(PROPERTY_LABEL, title);
+    }
+
+    public String getPlaceholder() {
+        return (String) this.getStateHelper().eval(PROPERTY_PLACEHOLDER);
+    }
+
+    public void setPlaceholder(final String placeholder) {
+        this.updateStateHelper(PROPERTY_PLACEHOLDER, placeholder);
     }
 
     protected void updateStateHelper(final String propertyName, final Object value) {
