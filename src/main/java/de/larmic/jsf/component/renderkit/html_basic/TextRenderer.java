@@ -18,7 +18,16 @@ public class TextRenderer extends Renderer {
 
         writer.startElement("div", component);
         writer.writeAttribute("style", "text-input", "styleClass");
-        writer.writeText("my first component", component, null);
+
+        writer.startElement("label", component);
+        writer.writeText("Username", component, null);
+        writer.endElement("label");
+
+        writer.startElement("br", component);
+        writer.endElement("br");
+
+        writer.startElement("input", component);
+        writer.endElement("input");
     }
 
     @Override
