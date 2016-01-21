@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>JSF 2.2 livedemo</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <h:form class="login-box">
+
+            <input style="display:none"/>
+            <input type="password" style="display:none"/>
+
+            <div class="box-header">
+                <h2>Log In</h2>
+            </div>
+            <h:panelGroup rendered="#{not demoAction.loggedIn}">
+                <h:outputLabel value="Username" for="username"/>
+                <br/>
+                <h:inputText id="username"
+                             value="#{demoAction.username}"
+                             required="true"
+                             pt:placeholder="Enter username"
+                             autocomplete="off"/>
+                <br/>
+                <h:outputLabel value="Password" for="password"/>
+                <br/>
+                <h:inputText id="password"
+                             value="#{demoAction.username}"
+                             required="true"
+                             autocomplete="off"
+                             pt:type="password"
+                             pt:placeholder="Enter password"/>
+                <br/>
+                <h:commandButton value="Sign In" action="#{demoAction.login()}"/>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{demoAction.loggedIn}">
+                welcome #{demoAction.username}!
+            </h:panelGroup>
+        </h:form>
+    </div>
+</h:body>
+</html>
