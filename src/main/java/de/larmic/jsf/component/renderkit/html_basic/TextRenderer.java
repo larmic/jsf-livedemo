@@ -22,6 +22,16 @@ public class TextRenderer extends Renderer {
     }
 
     @Override
+    public boolean getRendersChildren() {
+        return true;
+    }
+
+    @Override
+    public void encodeChildren(FacesContext context, UIComponent component) throws IOException {
+        // do not encode children
+    }
+
+    @Override
     public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
         final ResponseWriter writer = context.getResponseWriter();
 
