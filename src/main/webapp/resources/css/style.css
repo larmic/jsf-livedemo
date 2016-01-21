@@ -62,7 +62,7 @@ a {
     border-radius: 5px 5px 0 0;
 }
 
-.login-box label {
+.login-box .login-input label {
     font-weight: 700;
     font-size: .8em;
     color: #888;
@@ -71,7 +71,7 @@ a {
     line-height: 2em;
 }
 
-.login-box input {
+.login-box .login-input input {
     margin-bottom: 20px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -80,7 +80,7 @@ a {
     color: #888;
 }
 
-.login-box input:focus {
+.login-box .login-input input:focus {
     outline: none;
     border-color: #665851;
     transition: 0.5s;

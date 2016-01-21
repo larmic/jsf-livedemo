@@ -16,23 +16,27 @@
                 <h2>Log In</h2>
             </div>
             <h:panelGroup rendered="#{not demoAction.loggedIn}">
-                <h:outputLabel value="Username" for="username"/>
-                <br/>
-                <h:inputText id="username"
-                             value="#{demoAction.username}"
-                             required="true"
-                             pt:placeholder="Enter username"
-                             autocomplete="off"/>
-                <br/>
-                <h:outputLabel value="Password" for="password"/>
-                <br/>
-                <h:inputText id="password"
-                             value="#{demoAction.username}"
-                             required="true"
-                             autocomplete="off"
-                             pt:type="password"
-                             pt:placeholder="Enter password"/>
-                <br/>
+                <div class="login-input">
+                    <h:outputLabel value="Username" for="username"/>
+                    <br/>
+                    <h:inputText id="username"
+                                 value="#{demoAction.username}"
+                                 required="true"
+                                 pt:placeholder="Enter username"
+                                 autocomplete="off"/>
+                </div>
+
+                <div class="login-input">
+                    <h:outputLabel value="Password" for="password"/>
+                    <br/>
+                    <h:inputText id="password"
+                                 value="#{demoAction.username}"
+                                 required="true"
+                                 autocomplete="off"
+                                 pt:type="password"
+                                 pt:placeholder="Enter password"/>
+                </div>
+
                 <h:commandButton value="Sign In" action="#{demoAction.login()}"/>
             </h:panelGroup>
 
