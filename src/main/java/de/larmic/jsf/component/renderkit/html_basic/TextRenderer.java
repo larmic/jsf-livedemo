@@ -8,6 +8,7 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 import javax.faces.render.Renderer;
 import java.io.IOException;
+import java.util.Map;
 
 @FacesRenderer(componentFamily = UIText.COMPONENT_FAMILY, rendererType = UIText.RENDERER_TYPE)
 public class TextRenderer extends Renderer {
@@ -29,10 +30,27 @@ public class TextRenderer extends Renderer {
         writer.endElement("br");
 
         writer.startElement("input", text);
+        writer.writeAttribute("name", component.getClientId(context), "clientId");
         if (text.getPlaceholder() != null && !"".equals(text.getPlaceholder())) {
             writer.writeAttribute("placeholder", text.getPlaceholder(), null);
         }
         writer.endElement("input");
+    }
+
+    @Override
+    public void decode(FacesContext context, UIComponent component) {
+        if (!component.isRendered()) {
+            return;
+        }
+
+        final String clientId = component.getClientId(context);
+
+        final Map<String, String> requestMap = context.getExternalContext().getRequestParameterMap();
+
+        final String newValue = requestMap.get(clientId);
+        if (newValue != null) {
+            ((UIText) component).setValue(newValue);
+        }
     }
 
     @Override
