@@ -1,4 +1,4 @@
-package de.larmic.jsf.html_basic;
+package de.larmic.jsf.renderkit.html_basic;
 
 import de.larmic.jsf.component.html.UIText;
 
